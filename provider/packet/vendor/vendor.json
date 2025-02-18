@@ -9,5 +9,5 @@
 			"revisionTime": "2018-07-11T07:47:35Z"
 		}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/packet"
+	"rootPath": "github.com/syseleven/go-discover/provider/packet"
 }

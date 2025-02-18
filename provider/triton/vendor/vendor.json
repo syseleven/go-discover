@@ -91,5 +91,5 @@
 			"revisionTime": "2018-03-14T11:37:28Z"
 		}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/triton"
+	"rootPath": "github.com/syseleven/go-discover/provider/triton"
 }

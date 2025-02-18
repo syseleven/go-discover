@@ -22,5 +22,5 @@
 		{"path":"google.golang.org/appengine/internal/urlfetch","checksumSHA1":"QtAbHtHmDzcf6vOV9eqlCpKgjiw=","revision":"d9a072cfa7b9736e44311ef77b3e09d804bfa599","revisionTime":"2017-08-14T19:09:42Z"},
 		{"path":"google.golang.org/appengine/urlfetch","checksumSHA1":"akOV9pYnCbcPA8wJUutSQVibdyg=","revision":"d9a072cfa7b9736e44311ef77b3e09d804bfa599","revisionTime":"2017-08-14T19:09:42Z"}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/digitalocean"
+	"rootPath": "github.com/syseleven/go-discover/provider/digitalocean"
 }

@@ -1,11 +1,11 @@
-module github.com/hashicorp/go-discover/provider/gce
+module github.com/syseleven/go-discover/provider/gce
 
 go 1.22.5
 
-replace github.com/hashicorp/go-discover v0.0.0-20240726212017-342faf50e5d4 => ../../
+replace github.com/syseleven/go-discover v0.0.0-20240726212017-342faf50e5d4 => ../../
 
 require (
-	github.com/hashicorp/go-discover v0.0.0-20240726212017-342faf50e5d4
+	github.com/syseleven/go-discover v0.0.0-20240726212017-342faf50e5d4
 	golang.org/x/oauth2 v0.22.0
 	google.golang.org/api v0.195.0
 )

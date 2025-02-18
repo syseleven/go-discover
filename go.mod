@@ -8,7 +8,7 @@ require (
 	github.com/denverdino/aliyungo v0.0.0-20170926055100-d3308649c661
 	github.com/digitalocean/godo v1.7.5
 	github.com/gophercloud/gophercloud v0.1.0
-	github.com/hashicorp/go-discover/provider/gce v0.0.0-20241120163552-5eb1507d16b4
+	github.com/syseleven/go-discover/provider/gce v0.0.0-20241120163552-5eb1507d16b4
 	github.com/hashicorp/go-multierror v1.0.0
 	github.com/hashicorp/mdns v1.0.1
 	github.com/hashicorp/vic v1.5.1-0.20190403131502-bbfe86ec9443
