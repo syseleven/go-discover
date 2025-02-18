@@ -1,5 +1,7 @@
 module github.com/syseleven/go-discover
 
+replace github.com/syseleven/go-discover/provider/gce => ./provider/gce
+
 require (
 	github.com/Azure/azure-sdk-for-go v44.0.0+incompatible
 	github.com/Azure/go-autorest/autorest v0.11.18
@@ -8,7 +10,6 @@ require (
 	github.com/denverdino/aliyungo v0.0.0-20170926055100-d3308649c661
 	github.com/digitalocean/godo v1.7.5
 	github.com/gophercloud/gophercloud v0.1.0
-	github.com/syseleven/go-discover/provider/gce v0.0.0-20241120163552-5eb1507d16b4
 	github.com/hashicorp/go-multierror v1.0.0
 	github.com/hashicorp/mdns v1.0.1
 	github.com/hashicorp/vic v1.5.1-0.20190403131502-bbfe86ec9443
@@ -19,6 +20,7 @@ require (
 	github.com/packethost/packngo v0.1.1-0.20180711074735-b9cb5096f54c
 	github.com/softlayer/softlayer-go v0.0.0-20180806151055-260589d94c7d
 	github.com/stretchr/testify v1.9.0
+	github.com/syseleven/go-discover/provider/gce v0.0.0-20241120163552-5eb1507d16b4
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.480
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.480
 	github.com/vmware/govmomi v0.18.0
