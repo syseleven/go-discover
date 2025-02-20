@@ -40,5 +40,5 @@
 		{"path":"github.com/go-ini/ini","checksumSHA1":"cVyhKIRI2gQrgpn5qrBeAqErmWM=","revision":"7696a9f8be6a9e03b2074b4c88eee5ed3c4f0599","revisionTime":"2017-06-10T21:46:25Z"},
 		{"path":"github.com/jmespath/go-jmespath","checksumSHA1":"0ZrwvB6KoGPj2PoDNSEJwxQ6Mog=","revision":"7696a9f8be6a9e03b2074b4c88eee5ed3c4f0599","revisionTime":"2017-06-10T21:46:25Z"}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/aws"
+	"rootPath": "github.com/syseleven/go-discover/provider/aws"
 }

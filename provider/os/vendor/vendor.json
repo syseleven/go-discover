@@ -13,5 +13,5 @@
 		{"path":"github.com/gophercloud/gophercloud/openstack/utils","checksumSHA1":"TDOZnaS0TO0NirpxV1QwPerAQTY=","revision":"2bf16b94fdd9b01557c4d076e567fe5cbbe5a961","revisionTime":"2017-08-31T14:48:56Z"},
 		{"path":"github.com/gophercloud/gophercloud/pagination","checksumSHA1":"YspETi3tOMvawKIT91HyuqaA5lM=","revision":"2bf16b94fdd9b01557c4d076e567fe5cbbe5a961","revisionTime":"2017-08-31T14:48:56Z"}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/os"
+	"rootPath": "github.com/syseleven/go-discover/provider/os"
 }
