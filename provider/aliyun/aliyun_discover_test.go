@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	discover "github.com/hashicorp/go-discover"
-	"github.com/hashicorp/go-discover/provider/aliyun"
+	discover "github.com/syseleven/go-discover"
+	"github.com/syseleven/go-discover/provider/aliyun"
 )
 
 var _ discover.Provider = (*aliyun.Provider)(nil)

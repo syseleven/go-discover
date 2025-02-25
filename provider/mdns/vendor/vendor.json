@@ -13,5 +13,5 @@
 		{"path":"golang.org/x/net/ipv6","checksumSHA1":"hDszlYGI8m9puPsEIDr59ccTiF8=","revision":"9b4f9f5ad5197c79fd623a3638e70d8b26cef344","revisionTime":"2018-10-23T11:20:58Z"},
 		{"path":"golang.org/x/sys/unix","checksumSHA1":"jj/eU15RpGLEwyueuTzsS0r5ONw=","revision":"95b1ffbd15a57cc5abb3f04402b9e8ec0016a52c","revisionTime":"2018-10-26T08:28:59Z"}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/provider/mdns"
+	"rootPath": "github.com/syseleven/go-discover/provider/mdns"
 }

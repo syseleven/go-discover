@@ -49,5 +49,5 @@
 		{"checksumSHA1":"N0TftT6/CyWqp6VRi2DqDx60+Fo=","path":"google.golang.org/grpc/tap","revision":"7696a9f8be6a9e03b2074b4c88eee5ed3c4f0599","revisionTime":"2017-06-10T21:46:25Z"},
 		{"checksumSHA1":"yHpUeGwKoqqwd3cbEp3lkcnvft0=","path":"google.golang.org/grpc/transport","revision":"7696a9f8be6a9e03b2074b4c88eee5ed3c4f0599","revisionTime":"2017-06-10T21:46:25Z"}
 	],
-	"rootPath": "github.com/hashicorp/go-discover/gce"
+	"rootPath": "github.com/syseleven/go-discover/gce"
 }
