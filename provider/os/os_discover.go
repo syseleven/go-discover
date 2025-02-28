@@ -3,7 +3,6 @@ package os
 
 import (
 	"crypto/tls"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -57,16 +56,6 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 	tagValue := args["tag_value"]
 	var err error
 
-	if projectID == "" { // Use the one on the instance if not provided either by parameter or env
-		l.Printf("[INFO] discover-os: ProjectID not provided. Looking up in metadata...")
-		projectID, err = getProjectID()
-		if err != nil {
-			return nil, err
-		}
-		l.Printf("[INFO] discover-os: ProjectID is %s", projectID)
-		args["project_id"] = projectID
-	}
-
 	log.Printf("[DEBUG] discover-os: Using project_id=%s tag_key=%s tag_value=%s", projectID, tagKey, tagValue)
 	client, err := newClient(args, l)
 	if err != nil {
@@ -77,7 +66,7 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 		client.UserAgent.Prepend(p.userAgent)
 	}
 
-	pager := servers.List(client, ListOpts{ListOpts: servers.ListOpts{Status: "ACTIVE"}, ProjectID: projectID})
+	pager := servers.List(client, ListOpts{ListOpts: servers.ListOpts{Status: "ACTIVE"}/*, ProjectID: projectID*/})
 	if err := pager.Err; err != nil {
 		return nil, fmt.Errorf("discover-os: ListServers failed: %s", err)
 	}
@@ -127,6 +116,7 @@ func newClient(args map[string]string, l *log.Logger) (*gophercloud.ServiceClien
 		region = "RegionOne"
 	}
 	projectID := argsOrEnv(args, "project_id", "OS_PROJECT_ID")
+	projectName := argsOrEnv(args, "project_name", "OS_PROJECT_NAME")
 	insecure := argsOrEnv(args, "insecure", "OS_INSECURE")
 	domain_id := argsOrEnv(args, "domain_id", "OS_DOMAIN_ID")
 	domain_name := argsOrEnv(args, "domain_name", "OS_DOMAIN_NAME")
@@ -143,6 +133,7 @@ func newClient(args map[string]string, l *log.Logger) (*gophercloud.ServiceClien
 		Password:         password,
 		TokenID:          token,
 		TenantID:         projectID,
+		TenantName:       projectName,
 	}
 
 	client, err := openstack.NewClient(ao.IdentityEndpoint)
@@ -198,26 +189,4 @@ type ListOpts struct {
 func (opts ListOpts) ToServerListQuery() (string, error) {
 	q, err := gophercloud.BuildQueryString(opts)
 	return q.String(), err
-}
-
-func getProjectID() (string, error) {
-	resp, err := http.Get("http://169.254.169.254/openstack/latest/meta_data.json")
-	if err != nil {
-		return "", fmt.Errorf("discover-os: Error asking metadata for project_id: %s", err)
-	}
-	data := struct {
-		ProjectID string `json:"project_id"`
-	}{}
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return "", fmt.Errorf("discover-os: Can't read response body: %s", err)
-	}
-	resp.Body.Close()
-	if err = json.Unmarshal(body, &data); err != nil {
-		return "", fmt.Errorf("discover-os: Can't convert project_id: %s", err)
-	}
-	if data.ProjectID == "" {
-		return "", fmt.Errorf("discover-os: Couln't find project_id on metadata")
-	}
-	return data.ProjectID, nil
 }
